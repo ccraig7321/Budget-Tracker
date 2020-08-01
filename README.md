@@ -75,6 +75,7 @@ GitHub: https://github.com/ccraig7321/Budget-Tracker
 <br><br>
 Portfolio Link: https://ccraig7321.github.io/Responsive-Portfolio/
 
+___
 
 ### License
 
