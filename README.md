@@ -20,7 +20,7 @@ When the application opens the user will see the budget tracker application.
 
 The application gives the user the opportunity to enter a new transaction name, a transation amount, and also decide whether to add or subtract funds from the overall total. Once these values are entered into the tracker, the graph will display the trend of the data. The y-axis indicates the total and the x-axis displays the date in which the transaction was added.
 
-The next feature of this application is its ability to be used while offline.  In order to go into an offline status, the user will need to open up the inspector tools, select "service worker", and check the "Offline" box on the screen. 
+The next feature of this application is its ability to be used while offline.  In order to go into an offline status, the user will need to open up the inspector tools, select "service worker", and check the "Offline" box on the screen. The service worker is created from the service-worker.js file and provides the application the necessary information to know which files need to be caches while the application functions offline.
 
 <br><br>
 
@@ -28,42 +28,50 @@ The next feature of this application is its ability to be used while offline.  I
 
 <br><br>
 
+The user can now input a transation while in the offline state. For this example, the user is attempting to post a -$250 transaction entitled "Homework Offline":
+
+<br><br>
+
+
+![HOMEWORK OFFLINE](public/images/homeworkExample.png)
+
+<br><br>
+
+
 When the tracker is used offline the indexedDB holds that information in a pending state in the cached area. Any transaction done during this time will appear as below:
 
 <br><br>
 
-![CREATE BURGER](public/assets/img/makeBurger.png)
+![INDEXED DB](public/images/pendingIndexedDb.png)
 
 <br><br>
 
-Once clicked, the created burger will be appear on the left side of the page. Along with the newly created burger, there will be a button labeled "Eat Me!" that appears to the right of the burger name.
-<br><br>
-
-![SAVING NOTES](public/assets/img/addedBurger.png)
+While in this state, the user will also be able to look at the caches storage. This is the information that is being stored while offline based on the requested caches files in the service-worker.js file.
 
 <br><br>
 
-Once the burger is added, the user will click the "Eat Me!" button. Doing this will move the burger from the "Make the Burger" column on the left side of the page to the "DEVOUR THE BURGER!!" column on the right side of the page.
-<br><br>
-
-![PICTURE DEVOURED BURGERS](public/assets/img/devouredBurgers.png)
+![CACHE STORAGE](public/images/cacheStorage.png)
 
 <br><br>
 
-If the user wants to view the totality of the information within the application, he/she can got to localhost:8080/api/allburgers to view the details of each added burger by I.D.
+After the user has completed the transaction, he/she will be able to test the functionality by placing the application back in an online state by simply unclicking the offline button that was previously selected. By doing this step and refreshing the page, the user will be able to see that the pending transtion is no longer showing in the indexedDb section of the inspector tools. Along with this updated, the user will also be able to see that their new transaction has been successfully added to the list of overall transaction for this appliction.
 
 <br><br>
 
-![PICTURE OF BURGER ARRAY](public/assets/img/burgerArray.png)
+![ONLINE PAGE](public/images/onlineTest.png)
+
+<br><br>
+
+The user is now able to free switch between an online and offline state without any interuption with functionality of the application.
 
 <br><br>
 ___
 
 ### Links for Heroku Deployment and GitHubDeployment
 <br>
-Heroku: https://node-burgers.herokuapp.com/
+Heroku: https://budget-tracker12345.herokuapp.com/
 <br><br>
-GitHub:  https://ccraig7321.github.io/Node-Express-Handlebars/
+GitHub: https://github.com/ccraig7321/Budget-Tracker
 <br><br>
 Portfolio Link: https://ccraig7321.github.io/Responsive-Portfolio/
 
